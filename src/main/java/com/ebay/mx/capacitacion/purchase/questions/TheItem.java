@@ -12,6 +12,12 @@ public class TheItem implements Question<String> {
 
 	@Override
 	public String answeredBy(Actor actor) {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return Attribute.of(EbayShoppingCart.ADDED_ITEM).named("data-test-info").viewedBy(actor).value()
 				.toString();
 	}
